@@ -1,0 +1,26 @@
+{% extends "Empty.html" %}
+{% load static %}
+    {% block ContenidoCambia %}
+        <p>&nbsp;</p>
+        <ul>
+            <li>Usuario: {{user.username}}</li>
+            <li>Email: {{user.email}}</li>
+            <li>Nombre: {{user.first_name}}</li>
+            <li>Apellido: {{user.last_name}}</li>
+        </ul>
+        <a href="/App1/Perfil/editarPerfil" class="btn btn-success" style="text-decoration: none; color: white;"> Editar Perfil</a>
+        <a href="/App1/Perfil/changeAvatar" class="btn btn-success" style="text-decoration: none; color: white;"> Avatar</a>
+    </div>
+    </body>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+
+    {% endblock %}

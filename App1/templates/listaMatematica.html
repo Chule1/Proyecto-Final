@@ -1,0 +1,42 @@
+{% extends "Empty.html" %}
+{% load static %}
+
+{% block ContenidoCambia %}
+    {% for clase in clases_matematica %}
+        <div style="display: flex; align-items: center;">
+            {% if clase.imagenAlusiva %}
+                <img src="{{ clase.imagenAlusiva.url }}" alt="Imagen Alusiva" style="width: 400px; height: 400px; margin-right: 20px;">
+            {% endif %}
+            
+            <li>
+                <div>
+                <h3>{{ clase.titulo }}</h3>
+                <p>Id: {{clase.id}}</p>
+                <p>Tipo: {{ clase.tipo }}</p>
+                <p>Materia: {{ clase.materia }}</p>
+                <p>Nivel: {{ clase.nivel }}</p>
+                <p>Descripción: {{ clase.descripcion }}</p>
+                <p>Fecha de Publicación: {{ clase.fechaPublicacion }}</p>
+                <p>Teléfono de Contacto: {{ clase.telefonoContacto }}</p>
+                <p>Email de Contacto: {{ clase.emailContacto }}</p>
+                {% if clase.usuario == request.user %}
+                <button class="btn btn-warning"><a href="{% url 'EditarClase' clase.id %}">Editar</a></button>
+                <button class="btn btn-danger" ><a href="{% url 'BorrarClase' clase.id %}">Borrar</a></button>
+                {% endif %}
+                <p>&nbsp;</p>
+                </div>
+        </li>
+            
+    
+        
+            
+        </div>
+       
+    {% endfor %}
+    <p>&nbsp;</p>
+    <a href="{% url 'CrearClase' %}"><h4>Agrega la clase que ofreces o necesitas aquí</h4></a>
+    <p>&nbsp;</p>
+{% endblock %}
+
+
+

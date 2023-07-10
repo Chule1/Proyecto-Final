@@ -1,0 +1,38 @@
+{% extends "Empty.html" %}
+{% load static %}
+
+{% block ContenidoCambia %}
+    <p>&nbsp;</p>
+    <div>
+        <form action="" method="post" enctype="multipart/form-data"> {% csrf_token %}
+            <table>
+                {% for field in miFormulario %}
+                    <tr>
+                        <td>{{ field.label_tag }}</td>
+                        <td>
+                            {% if field.field.required %}
+                                {{ field }}
+                            {% else %}
+                                <input type="{{ field.field.widget.input_type }}" name="{{ field.html_name }}" {% if field.value %}value="{{ field.value }}"{% endif %} placeholder="{{ field.label }}" class="form-control">
+                            {% endif %}
+                            {% if field.errors %}
+                                <div class="errorlist">
+                                    {% for error in field.errors %}
+                                        <span class="error">{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </table>
+            <input class="btn btn-primary" type="submit" value="Enviar">
+        </form>
+        {% if clase.imagenAlusiva %}
+    <img src="{{ clase.imagenAlusiva.url }}" alt="Imagen Alusiva" style="max-width: 300px;">
+{% endif %}
+    </div>
+    <p>&nbsp;</p>
+{% endblock %}
+
+

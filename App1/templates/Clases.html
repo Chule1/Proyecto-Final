@@ -1,0 +1,65 @@
+{% extends "Empty.html" %}
+{% load static %}
+    {% block ContenidoCambia %}
+    <p>&nbsp;</p>
+<head>
+  <title>Página con cuatro filas</title>
+  <style>
+    .fila {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .imagen {
+      margin-right: 20px;
+      width: 100px;
+      height: 100px;
+    }
+    .descripcion {
+      flex: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="fila">
+    <img class="imagen" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-H_tGYpOcV0oLhkb23EoVReiV3T9W0CLrUUdEZJyo6s7y6RxpphP34CVkSsogAXI2opI&usqp=CAU" alt="Imagen 1">
+    <div class="descripcion">
+      <h2>Matemática</h2>
+      <p>Geometría, álgebra, aritmética, y todo aquello que te traiga "problemas" puede ser resuelto con nuestros expertos aquí</p>
+      <a href="{% url 'listaMatematica' %}">Ir a Clases de Matematica</a>
+    </div>
+  </div>
+  
+  <div class="fila">
+    <img class="imagen" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzNK0HiFaaR3zmvxJZrfpQn6oQfJY04_8dKePJ4S52MjuJ__ObJqEyWkau35bjfjTc_nM&usqp=CAU" alt="Imagen 2">
+    <div class="descripcion">
+      <h2>Física</h2>
+      <p>Estática, cinemática o dinámica, no hay fuerza que detenga a nuestros tutores de ayudarte a toda velocidad.</p>
+      <a href="{% url 'listaFisica' %}">Ir a Clases de Fisica</a>
+    </div>
+  </div>
+  
+  <div class="fila">
+    <img class="imagen" src="https://img.freepik.com/vector-gratis/objetos-laboratorio-ciencias_23-2148488312.jpg?w=740&t=st=1688866635~exp=1688867235~hmac=397c4e945df1463181a457e22c1c68cf3a5a2936794c6b618d69e1e941862b23"Imagen 3">
+    <div class="descripcion">
+      <h2>Química</h2>
+      <p>No hay compuesto sobre la tierra capaz de detener tus ganas de entender esta ciencia.</p>
+      <a href="#">Ir a Clases de Química</a>
+    </div>
+  </div>
+  
+  <div class="fila">
+    <img class="imagen" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS60EvWkgCCRkevga0nge32Yqb3veUyxGbg_w&usqp=CAU" alt="Imagen 4">
+    <div class="descripcion">
+      <h2>Especialidades</h2>
+      <p>Necesitas ayuda en algo más preciso, alguna ingeniería o técnica en particular. Tambien podemos ayudarte con eso</p>
+      <a href="#">Ir a Clases de Especialidad</a>
+    </div>
+  </div>
+</body>
+
+<a href="{% url 'CrearClase' %}"><h4>Agrega la clase que ofreces o necesitas aquí</h4></a>
+<br>
+<br>
+
+{% endblock %}

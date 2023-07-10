@@ -1,0 +1,50 @@
+{% extends "Empty.html" %}
+{% load static %}
+
+{% block ContenidoCambia %}
+<div style="display: flex; flex-direction: column; align-items: center;">    
+  <div style="display: flex; align-items: center;">
+        {% if clase.imagenAlusiva %}
+            <img src="{{ clase.imagenAlusiva.url }}" alt="Imagen Alusiva" style="width: 400px; height: 400px; margin-right: 20px;">
+        {% endif %}
+        <div>
+            <h3>{{ clase.titulo }}</h3>
+            <p>Tipo: {{ clase.tipo }}</p>
+            <p>Materia: {{ clase.materia }}</p>
+            <p>Nivel: {{ clase.nivel }}</p>
+            <p>Descripción: {{ clase.descripcion }}</p>
+            <p>Fecha de Publicación: {{ clase.fechaPublicacion }}</p>
+            <p>Teléfono de Contacto: {{ clase.telefonoContacto }}</p>
+            <p>Email de Contacto: {{ clase.emailContacto }}</p>
+
+            {% if clase.usuario == request.user %}
+                <button class="btn btn-warning"><a href="{% url 'EditarClase' clase.id %}">Editar</a></button>
+                <button class="btn btn-danger" ><a href="{% url 'BorrarClase' clase.id %}">Borrar</a></button>
+            {% endif %}
+        </div>
+    </div>
+  </div>  
+
+    <hr>  <!-- Añadir una línea divisoria entre los detalles y los comentarios -->
+
+    <div style="display: flex; flex-direction: column; align-items: center;">
+        <h2>Comentarios</h2>
+        {% if comentarios %}
+            <ul>
+                {% for comentario in comentarios %}
+                    <li>
+                        <strong>{{ comentario.nombre }}</strong>
+                        <p>{{ comentario.mensaje }}</p>
+                        <p>{{ comentario.fechaComentario }}</p>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No hay comentarios.</p>
+        {% endif %}
+        <h4><a href="{% url 'comentario' clase.pk %}">Agregar un Comentario</a></h4>
+    </div>
+
+    
+
+{% endblock %}

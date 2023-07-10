@@ -1,0 +1,51 @@
+.navText{
+    color: white !important;
+}
+
+.contenido{
+    margin-top: 100px !important;
+    padding: 20px;
+}
+
+.componenteEntregables{
+    background-color: thistle;
+}
+
+
+.btnEliminar a{
+    border-radius: 15px !important;
+    color: white !important;
+    text-decoration: none !important;
+}
+
+.containerForm{
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    position: absolute !important;
+    height: 100% !important;
+    width: 100% !important;
+    background-image: url("../assets/img/FondoLogin.jpg") !important;
+}
+
+.formLogin{
+    font-weight: bold;
+    background: linear-gradient(45deg, rgb(4, 67, 12) 0%, rgb(156, 153, 151) 100%);
+    padding: 40px 20px 20px 40px !important;
+    border-radius: 5px;
+    width: 350px;
+    height: 400px;
+
+}
+.formLogin div{
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inputLogin{
+    border-radius: 5px;
+    border: 1px solid black;
+    width: 90%;
+}

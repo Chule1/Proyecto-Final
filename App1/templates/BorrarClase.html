@@ -1,0 +1,23 @@
+{% extends "Empty.html" %}
+{% load static %}
+
+{% block ContenidoCambia %}
+<p>&nbsp;</p>
+    <h2>¿Estás seguro de que deseas borrar la clase "{{ clase.titulo }}"?</h2>
+    <form method="post">
+        {% csrf_token %}
+        <p>&nbsp;</p>
+        <input type="submit" value="Borrar">
+    </form>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    
+{% endblock %}
