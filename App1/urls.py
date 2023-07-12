@@ -15,6 +15,7 @@ urlpatterns = [
     path('Tutores/',Tutores,name="Tutores"),
     path('Alumnos/',Alumnos,name="Alumnos"),
     path('AboutUs/',AboutUs,name="AboutUs"),
+    path('Proximamente/',Proximamente,name="Proximamente"),
     path('Clases/',Clase,name="Clases"),
     path('CrearClase/',CrearClase,name="CrearClase"),
     path('EditarClase/<id_clase>', EditarClase, name="EditarClase"),

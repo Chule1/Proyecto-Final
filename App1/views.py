@@ -36,7 +36,11 @@ def AboutUs(request):
 
 def Clase(request):
     avatar = getavatar(request)
-    return render(request, "AboutUs.html",{"avatar": avatar})
+    return render(request, "Clases.html",{"avatar": avatar})
+
+def Proximamente(request):
+    avatar = getavatar(request)
+    return render(request, "Proximamente.html",{"avatar": avatar})
 
 @login_required
 def CrearClase(request):
