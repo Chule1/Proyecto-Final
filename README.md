@@ -1,34 +1,46 @@
-# Tercera-pre-entrega-Coronel
+# Proyecto Final Coronel
 
-Para ver esta entrega dirigirse a la rama "master".
-Se realizaron 4 clases: Clientes, Vendedores, Productos, RecursosHumanos siguiendo la idea de entregas anteriores.
-Se trabajo en una web para una pequeña empresa (pyme) dedicada a la venta de materiales de construcción.
-Se agregaron (con los minimos minimos conocimientos de html y mucho google, algunas imagenes para darle personalidad a la pagina).
+Alumno: Matías Ariel Coronel
+
+Para ver esta entrega dirigirse a la rama "Final".
+
+La aplicacion está orientada a la oferta y solicitud de clases particulares o tutorías de materias de las ciencias exactas e ingeniería.
+Previo registri, permite al usuario publicar solicitud de clases (adjuntando el temario como imagen) o bien ofrecer como docente sus
+clases particulares (adjuntando un flyer publicitario o imagen alusiva). 
+A nivel de esta entrega se dejaron operativas dos materias (matemática y física). 
+La primera de ellas mostrando toda la info de cada clase en el listado y la segunda a través de una lista reducida y botones Ver Mas
+para pasar al detalle de cada clase publicada.
+Para la comunicación entre usuarios se habilitaron comentarios en cada clase detallada (solo en física), que permiten incluso a usuarios
+no registrados dejar consultas exponiendo nombre y mensaje.
 
 Las URL disponibles son las siguientes:
 
-    path('inicio/', inicio),
-    path('Clientes/', clientes, name="Cursos"),
-    path('Vendedores/', vendedores, name="Vendedores"),
-    path('Productos/', productos, name="Productos"),
+    path('inicio/', inicio,name="inicio"),
     path('Empty/', Empty, name="Empty"),
-    path('RecursosHumanos/', recursosHumanos, name="RecursosHumanos"),
-    path('RegistrarCliente/', RegistrarCliente, name="RegistrarCliente"),
-    path('RegistrarVendedor/', RegistrarVendedor, name="RegistrarVendedor"),
-    path('BuscarVendedor/', BuscarVendedor, name="BuscarVendedor"),
-    path('aux_BuscarVendedor/', aux_BuscarVendedor, name="aux_BuscarVendedor"),
-    path('RegistrarProducto/', RegistrarProducto, name="RegistrarProducto"),
-    path('BuscarProducto/', BuscarProducto, name="BuscarProducto"),
-    path('aux_BuscarProducto/', aux_BuscarProducto, name="aux_BuscarProducto"),
-    path('RegistrarCandidato/', RegistrarCandidato, name="RegistrarCandidato"),
+    path('login/', loginWeb, name="login"),
+    path('registro/', registro, name="registro"),
+    path('Perfil/', perfilview, name="Perfil"),
+    path('Logout/',LogoutView.as_view(template_name = 'login.html'), name="Logout"),
+    path('Perfil/editarPerfil/', editarPerfil, name="editarPerfil"),
+    path('Perfil/changePassword/', changePassword, name="changePassword"),
+    path('Perfil/changeAvatar/', editAvatar, name="editAvatar"),
+    path('Tutores/',Tutores,name="Tutores"),
+    path('Alumnos/',Alumnos,name="Alumnos"),
+    path('AboutUs/',AboutUs,name="AboutUs"),
+    path('Proximamente/',Proximamente,name="Proximamente"),
+    path('Clases/',Clase,name="Clases"),
+    path('CrearClase/',CrearClase,name="CrearClase"),
+    path('EditarClase/<id_clase>', EditarClase, name="EditarClase"),
+    path('BorrarClase/<id_clase>', BorrarClase, name="BorrarClase"),
+    path('DetalleClase/<int:clase_id>/', DetalleClase, name='DetalleClase'),
+    path('listaMatematica/',listaMatematica,name="listaMatematica"),
+    path('listaFisica/',listaFisica,name="listaFisica"),
+    path('DetalleClase/<int:clase_id>/comentario/', ComentarioPagina.as_view(), name='comentario')
 
-Se recomienda empezar probando el inicio, Clientes, Vendedores, Productos y RecursosHUmanos que son las planillas meramente esteticas.
-Luego probar las dedicadas al registro y finalmente a las de busqueda.
 
-Se han dejado pre-cargados los siguientes objetos si se quisiera probar la busqueda sin cargar nada nuevo:
-Productos = arena, Cal.
-Vendedores = NombrePrueba, ApellidoPrueba, Chaco,123456,prueba@prueba.com,10
-Vendedores = Martin, Ramirez, Buenos Aires, 456789, martira@gmail.com,10
-
+Se dejo precargado el usuario:
+UsuarioPrueba1
+pass: prueba123
 
 Si quisieran ver algo desde el admin deje creado un superusuario para los tutores del curso que se los dejo en la entrega en CODER.
+
