@@ -26,9 +26,17 @@ def Tutores(request):
     avatar = getavatar(request)
     return render(request, "Tutores.html",{"avatar": avatar})
 
+def Alumnos(request):
+    avatar = getavatar(request)
+    return render(request, "Alumnos.html",{"avatar": avatar})
+
+def AboutUs(request):
+    avatar = getavatar(request)
+    return render(request, "AboutUs.html",{"avatar": avatar})
+
 def Clase(request):
     avatar = getavatar(request)
-    return render(request, "Clases.html",{"avatar": avatar})
+    return render(request, "AboutUs.html",{"avatar": avatar})
 
 @login_required
 def CrearClase(request):
