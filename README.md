@@ -43,4 +43,5 @@ UsuarioPrueba1
 pass: prueba123
 
 Si quisieran ver algo desde el admin deje creado un superusuario para los tutores del curso que se los dejo en la entrega en CODER.
+El video de presentación de la entrega es: https://youtu.be/son85c7QvD8
 
